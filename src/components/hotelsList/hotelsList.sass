@@ -1,0 +1,21 @@
+.hotels-list
+    // display: flex
+    overflow: scroll
+    height: 510px
+    overflow-x: hidden
+    &::-webkit-scrollbar
+        width: 2px
+    &::-webkit-scrollbar-track
+        background: #E7E7E7
+    &::-webkit-scrollbar-thumb
+        background-color: #41522E
+        border-radius: 2px 
+    &__item
+        display: flex
+        align-items: center
+        border-bottom: 1px solid rgba(135, 135, 135, 0.2)
+    &__house
+        width: 37px
+        height: 35px
+        background: url('../../resources/img/house.svg') no-repeat
+        margin-left: 35px

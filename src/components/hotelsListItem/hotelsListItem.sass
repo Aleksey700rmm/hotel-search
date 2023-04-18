@@ -1,0 +1,74 @@
+.hotels-list-item
+    width: 584px
+    display: flex
+    justify-content: space-between
+    margin-left: 24px
+    margin-right: 18px 
+    padding: 16px 16px 16px 0
+    position: relative
+    height: 100px
+    &__label
+        height: 22px
+        width: 22px
+        display: inline-block
+        cursor: pointer
+        background: url('../../resources/img/like.svg') no-repeat
+        margin-left: auto
+    &__name
+        font-size: 17px
+        font-weight: 300
+        color: #424242
+    &__time
+        display: flex
+        align-items: center
+    &__date
+        font-size: 14px
+        color: #878787
+        margin-right: 20px
+    &__days
+        font-size: 14px
+        color: #878787
+    &__border
+        width: 9px
+        border-bottom: 1px solid #C4C4C4
+        margin-right: 10px
+    &__right
+        position: absolute
+        right: 0
+        top: 15px
+        right: 15px
+        display: flex
+        flex-direction: column
+        margin-left: auto
+        // margin-right: 10px 
+    &__price-wrapper
+        display: flex
+        align-items: center
+        margin-top: 20px
+    &__price
+        margin-right: 8px
+        font-size: 11px
+        color: #878787
+    &__amount
+        font-size: 22px
+        color: #424242
+    &__grade
+        display: flex
+        width: 100px
+        height: 17px
+        margin-top: 5px
+.active
+    background: url('../../resources/img/red_like.svg') no-repeat
+    height: 22px
+    width: 22px
+.yellow-star
+    background: url('../../resources/img/yellow_star.svg') no-repeat
+    width: 17px
+    height: 17px
+.grey-star
+    background: url('../../resources/img/grey_star.svg') no-repeat
+    width: 17px
+    height: 17px
+.favorite
+    max-width: 360px
+    margin: 0
