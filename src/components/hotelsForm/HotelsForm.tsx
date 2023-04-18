@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage as FormikErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { requestHotels } from "../../store/action-creators/hotels";
-import {useEffect, useCallback} from 'react'
+import {useEffect} from 'react'
 import { useDispatch } from "react-redux"
 import { HotelParams } from "../../types/hotels";
 import './hotelsForm.sass'
@@ -43,14 +43,8 @@ const HotelsForm = () => {
             <Formik
                 initialValues={
                     initialParams()
-                    // location: "Москва",
-                    // date: new Date().toLocaleString().replace(/\//g, '-').slice(0, 10).split('.').reverse().join('-'), 
-                    // days: 1
-                    // date: new Date().toLocaleString().replace(/\//g, '-').slice(0, 10), 
                 }
                 validationSchema={Yup.object({
-                    // login: Yup.string().email('Логин должен быть валидным').required("Обязательное поле"),
-                    // password: Yup.string().min(8, "Минимум 8 символов!").required("Обязательное поле"),
                 })}
                 onSubmit={(params) => {
                     updateHotels(params)
@@ -67,7 +61,6 @@ const HotelsForm = () => {
                     <Field id='days' name='days' type='text' className='hotels-form__input'/>
                     <FormikErrorMessage className="hotels-form__error password" name="days" component="div" />
                     <button className="hotels-form__btn" type="submit">Найти</button>
-                    {/* <FormikErrorMessage className="auth-form__error" name="charName" component="div" /> */}
                 </Form>
 
             </Formik>

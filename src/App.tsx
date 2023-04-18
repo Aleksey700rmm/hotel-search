@@ -1,15 +1,19 @@
-import React from 'react';
-import Autorization from './components/pages/autorization/Autorization';
-import MainPage from './components/pages/mainPage/MainPage';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import Autorization from "./components/pages/autorization/Autorization";
+import MainPage from "./components/pages/mainPage/MainPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <div className='app'>
-      <Autorization/>
-      <MainPage/>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="app">
+                <Routes>
+                    <Route path="/" element={<Autorization />} />
+                    <Route path="/main" element={<MainPage />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

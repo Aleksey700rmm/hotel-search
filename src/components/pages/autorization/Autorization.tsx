@@ -1,12 +1,12 @@
-import './autorization.sass'
-import Modal from '../../modal/Modal'
+import "./autorization.sass";
+import Modal from "../../modal/Modal";
 
 const Autorization = () => {
     return (
         <div className="autorization">
-            <Modal/>
+            <Modal />
         </div>
-    )
-}
+    );
+};
 
 export default Autorization;

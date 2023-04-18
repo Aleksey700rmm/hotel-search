@@ -5,25 +5,25 @@ import HotelsHeader from "../../hotelsHeader/HotelsHeader";
 import HotelsList from "../../hotelsList/HotelsList";
 import MainHeader from "../../mainHeader/MainHeader";
 
-import './mainPage.sass'
+import "./mainPage.sass";
 
 const MainPage = () => {
     return (
         <div className="main-page">
-            <MainHeader/>
+            <MainHeader />
             <div className="main-page__wrapper">
                 <div className="main-page_left">
-                    <HotelsForm/>
-                    <FavoriteList/>
+                    <HotelsForm />
+                    <FavoriteList />
                 </div>
                 <div className="main-page__hotels">
-                    <HotelsHeader/>
-                    <SimpleCarousel/>
-                    <HotelsList/>
+                    <HotelsHeader />
+                    <SimpleCarousel />
+                    <HotelsList />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default MainPage;

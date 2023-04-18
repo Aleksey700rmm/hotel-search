@@ -1,12 +1,14 @@
-import { HotelsAction, HotelsActionTypes, HotelsState } from "../../types/hotels"
+import { HotelsAction, HotelsActionTypes, HotelsState } from "../../types/hotels";
 
 const initialState: HotelsState = {
     hotels: [],
     loading: false,
     error: null,
     filter: null,
-    pics: ['../../../resources/img/pic1.jpg', '../resources/img/pic2.jpg', '../resources/img/pic3.jpg']
-}
+    login: null,
+    password: null,
+    pics: ["pic1.jpg", "pic2.jpg", "pic3.jpg"],
+};
 
 export const hotels = (state = initialState, action: HotelsAction): HotelsState => {
     switch (action.type) {
@@ -15,38 +17,50 @@ export const hotels = (state = initialState, action: HotelsAction): HotelsState 
                 ...state,
                 loading: true,
                 error: null,
-                hotels: []
-            }
+                hotels: [],
+            };
         case HotelsActionTypes.FETCH_HOTELS_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 error: null,
-                hotels: action.payload
-            }
+                hotels: action.payload,
+            };
         case HotelsActionTypes.FETCH_HOTELS_ERROR:
             return {
                 ...state,
                 loading: false,
                 error: action.payload,
-                hotels: []
-            }
+                hotels: [],
+            };
         case HotelsActionTypes.ADD_FAVORITES:
             return {
                 ...state,
-                hotels: state.hotels.map(item => {
+                hotels: state.hotels.map((item) => {
                     if (item.hotelId === action.payload) {
-                        return {...item, favorite: !item.favorite}
+                        return { ...item, favorite: !item.favorite };
                     }
-                    return item
-                })
-            }
+                    return item;
+                }),
+            };
         case HotelsActionTypes.ADD_FILTERS:
             return {
                 ...state,
-                filter: action.payload
-            }
+                filter: action.payload,
+            };
+        case HotelsActionTypes.SET_USER:
+            return {
+                ...state,
+                login: action.payload.login,
+                password: action.payload.password,
+            };
+        case HotelsActionTypes.REMOVE_USER:
+            return {
+                ...state,
+                login: null,
+                password: null,
+            };
         default:
-            return state
+            return state;
     }
-}
+};

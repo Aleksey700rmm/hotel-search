@@ -1,8 +1,8 @@
-import { combineReducers} from 'redux'
-import { hotels } from './hotels'
+import { combineReducers } from "redux";
+import { hotels } from "./hotels";
 
 export const rootReducer = combineReducers({
-    hotels
-})
+    hotels,
+});
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
